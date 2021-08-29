@@ -136,11 +136,11 @@ async def _(event):
             except Exception as e:
                 print(str(e))
                 return
-            msg = f"Welcome to {(await event.get_chat()).title}, {nm}!\nGood to see you here!"
+            msg = f"Welcome to {(await event.get_chat()).title}, 😍{nm}!\nGood to see you here! Request movies With Correct spelling"
             butt = [Button.url("🌿 𝘾𝙃𝘼𝙉𝙉𝙀𝙇", url=f"https://t.me/{channel}")]
             await event.edit(msg, buttons=butt)
     else:
-        await event.answer("You are an old member and can speak freely! This isn't for you!", cache_time=0, alert=True)
+        await event.answer("You are an old member and can speak freely! This isn't for you!നീ എന്തിനാ ഇതിൽ ഞെക്കുന്നത്.നീ mute അല്ലല്ലോ..🤔", cache_time=0, alert=True)
 
 @BotzHub.on(events.NewMessage(pattern="/start"))
 async def strt(event):
