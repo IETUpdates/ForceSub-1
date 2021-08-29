@@ -119,7 +119,7 @@ async def mute_on_msg(event):
         except Exception as e:
             print(str(e))
             return
-        await event.reply(f"Hey {nm}☺️, seems like you haven't joined our channel. Please join @{channel} and then press the button below to unmute yourself!\n\nതാഴെ ഉള്ള ലിങ്ക് ഇൽ ക്ലിക്ക് ചെയ്ത് ചാനലിൽ ജോയിൻ ചെയ്ത ശേഷം unmute me എന്ന ബട്ടൺ ക്ലിക്ക് ചെയ്യുക..", buttons=[[Button.url("🍁𝘾𝙃𝘼𝙉𝙉𝙀𝙇🍁", url=f"https://t.me/{channel}")], [Button.inline("😐 UnMute Me", data=f"unmute_{event.sender_id}")]])
+        await event.reply(f"**Hey {nm}☺️, seems like you haven't joined our channel. Please join @{channel} and then press the button below to unmute yourself!**\n\n**താഴെ ഉള്ള ലിങ്ക് ഇൽ ക്ലിക്ക് ചെയ്ത് ചാനലിൽ ജോയിൻ ചെയ്ത ശേഷം** ''unmute me'' **എന്ന ബട്ടൺ ക്ലിക്ക് ചെയ്യുക.."**, buttons=[[Button.url("🍁𝘾𝙃𝘼𝙉𝙉𝙀𝙇🍁", url=f"https://t.me/{channel}")], [Button.inline("😐 UnMute Me", data=f"unmute_{event.sender_id}")]])
 
 
 @BotzHub.on(events.callbackquery.CallbackQuery(data=re.compile(b"unmute_(.*)")))
@@ -136,11 +136,11 @@ async def _(event):
             except Exception as e:
                 print(str(e))
                 return
-            msg = f"Welcome to {(await event.get_chat()).title}, 😍{nm}!\nGood to see you here! Request movies With Correct spelling"
+            msg = f"**Welcome to {(await event.get_chat()).title},** 😍{nm}!\n__Good to see you here! Request movies With Correct spelling__"
             butt = [Button.url("🌿 𝘾𝙃𝘼𝙉𝙉𝙀𝙇", url=f"https://t.me/{channel}")]
             await event.edit(msg, buttons=butt)
     else:
-        await event.answer("You are an old member and can speak freely! This isn't for you!നീ എന്തിനാ ഇതിൽ ഞെക്കുന്നത്.നീ mute അല്ലല്ലോ..🤔", cache_time=0, alert=True)
+        await event.answer("You are an old member and can speak freely! This isn't for you!\n\nനീ എന്തിനാ ഇതിൽ ഞെക്കുന്നത്.നീ mute അല്ലല്ലോ..🤔", cache_time=0, alert=True)
 
 @BotzHub.on(events.NewMessage(pattern="/start"))
 async def strt(event):
