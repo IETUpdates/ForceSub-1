@@ -119,7 +119,7 @@ async def mute_on_msg(event):
         except Exception as e:
             print(str(e))
             return
-        await event.reply(f"<b>Hey {nm}, seems like you haven't joined our channel. Please join @{channel} and then press the button below to unmute yourself!</b>\n\n<i>താഴെ ഉള്ള ലിങ്ക് ഇൽ ക്ലിക്ക് ചെയ്ത് ചാനലിൽ ജോയിൻ ചെയ്ത ശേഷം unmute me എന്ന ബട്ടൺ ക്ലിക്ക് ചെയ്യുക..</i>", buttons=[[Button.url("🍁𝘾𝙃𝘼𝙉𝙉𝙀𝙇🍁", url=f"https://t.me/{channel}")], [Button.inline("😐 UnMute Me", data=f"unmute_{event.sender_id}")]])
+        await event.reply(f"Hey {nm}, seems like you haven't joined our channel. Please join @{channel} and then press the button below to unmute yourself!\n\nതാഴെ ഉള്ള ലിങ്ക് ഇൽ ക്ലിക്ക് ചെയ്ത് ചാനലിൽ ജോയിൻ ചെയ്ത ശേഷം unmute me എന്ന ബട്ടൺ ക്ലിക്ക് ചെയ്യുക..", buttons=[[Button.url("🍁𝘾𝙃𝘼𝙉𝙉𝙀𝙇🍁", url=f"https://t.me/{channel}")], [Button.inline("😐 UnMute Me", data=f"unmute_{event.sender_id}")]])
 
 
 @BotzHub.on(events.callbackquery.CallbackQuery(data=re.compile(b"unmute_(.*)")))
@@ -136,7 +136,7 @@ async def _(event):
             except Exception as e:
                 print(str(e))
                 return
-            msg = f"<b>Welcome to {(await event.get_chat()).title}, {nm}!\nGood to see you here!<b/>"
+            msg = f"Welcome to {(await event.get_chat()).title}, {nm}!\nGood to see you here!"
             butt = [Button.url("𝘾𝙃𝘼𝙉𝙉𝙀𝙇", url=f"https://t.me/{channel}")]
             await event.edit(msg, buttons=butt)
     else:
