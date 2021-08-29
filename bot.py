@@ -129,7 +129,7 @@ async def _(event):
         x = await get_user_join(uid)
         nm = (await BotzHub(GetFullUserRequest(uid))).user.first_name
         if x is False:
-            await event.answer(f"You haven't joined @{channel} yet!", cache_time=0, alert=True)
+            await event.answer(f"You haven't joined @{channel} yet!\n\n ചാനലിൽ ജോയിൻ ചെയ്യാൻ പറഞ്ഞാൽ അത് ചെയ്യ് എന്നിട്ട് ഇവിടെ ക്ലിക്ക് ചെയ്യ് 🙄", cache_time=0, alert=True)
         elif x is True:
             try:
                 await BotzHub.edit_permissions(event.chat.id, uid, until_date=None, send_messages=True)
