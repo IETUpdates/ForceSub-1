@@ -137,7 +137,7 @@ async def _(event):
                 print(str(e))
                 return
             msg = f"**Welcome to {(await event.get_chat()).title},** 😍{nm}!\n__Good to see you here! Request movies With Correct spelling__"
-            butt = [Button.url("🌿 𝘾𝙃𝘼𝙉𝙉𝙀𝙇", url=f"https://t.me/{channel}")]
+            butt = [Button.url("🌿𝘽𝘼𝘾𝙆𝙐𝙋 𝙂𝙍𝙊𝙐𝙋", url=f"https://t.me/joinchat/Qfln7anyn441MTQ9")]
             await event.edit(msg, buttons=butt)
     else:
         await event.answer("You are an old member and can speak freely! This isn't for you!\n\nനീ എന്തിനാ ഇതിൽ ഞെക്കുന്നത്.നീ mute അല്ലല്ലോ..🤔", cache_time=0, alert=True)
